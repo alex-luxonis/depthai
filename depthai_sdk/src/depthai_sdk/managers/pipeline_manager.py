@@ -73,6 +73,7 @@ class PipelineManager:
                 size = self.__calcEncodeableSize(node.getVideoSize())
                 node.setVideoSize(size)
                 videnc.setDefaultProfilePreset(*size, node.getFps(), dai.VideoEncoderProperties.Profile.MJPEG)
+                videnc.setQuality(50)
             elif node.preview == nodeOutput:
                 size = self.__calcEncodeableSize(node.getPreviewSize())
                 node.setPreviewSize(size)
